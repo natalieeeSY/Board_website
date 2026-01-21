@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ post.title }}</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body class="view">
+    <h1>{{ post.title }}</h1>
+    <p>{{ post.date }}</p>
+
+    {% if post.image %}
+    <img src="/uploads/{{ post.image }}">
+    {% endif %}
+
+    <pre>{{ post.content }}</pre>
+
+    <a href="/delete/{{ post.id }}" class="danger">DELETE</a>
+    <a href="/">BACK</a>
+</body>
+</html>

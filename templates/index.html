@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Y2K Board</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>💿 Y2K BOARD</h1>
+        <a href="/write" class="btn">WRITE</a>
+    </header>
+
+    <main class="grid">
+        {% for post in posts %}
+        <div class="card">
+            {% if post.image %}
+            <img src="/uploads/{{ post.image }}">
+            {% endif %}
+            <h2>{{ post.title }}</h2>
+            <p>{{ post.date }}</p>
+            <a href="/view/{{ post.id }}">VIEW</a>
+        </div>
+        {% endfor %}
+    </main>
+</body>
+</html>
